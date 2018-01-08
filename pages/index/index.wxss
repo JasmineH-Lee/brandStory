@@ -5,6 +5,22 @@
   flex-flow: row wrap; 
   justify-content: space-around;
 }
+.home .swiper{
+  height: 500rpx;
+  width: 100%;
+  margin-bottom: 40rpx;
+}
+.home .swiper-box{
+  overflow-x: hidden;
+}
+.home .banner-item {
+  width: 100%;
+  height: 500rpx;
+}
+.home .banner-item .item-image{
+  width: 100%;
+  height: 500rpx;
+}
 .brand-list .brand-title {
   display: inline-block;
   width: 130rpx;

@@ -9,6 +9,7 @@ Page({
       year: '1910年',
       creator: 'Gabrielle Chanel',
       area:'法国巴黎',
+      factory: '123',
       biz_scope: '高端皮包香水生产',
       culture: '流行稍纵即逝，风格永存',
       design: '高雅、简约、精美',

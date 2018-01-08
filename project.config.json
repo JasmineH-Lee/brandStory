@@ -40,6 +40,30 @@
 					"name": "商品详情页面",
 					"pathName": "pages/goodDetail/goodDetail",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "品牌故事",
+					"pathName": "pages/brandStory/brandStory",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "品牌辨识",
+					"pathName": "pages/brandIdentify/brandIdentify",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "品牌辨识",
+					"pathName": "pages/brandIdentify/brandIdentify",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "品牌",
+					"pathName": "pages/brandDetail/brandDetail",
+					"query": ""
 				}
 			]
 		}

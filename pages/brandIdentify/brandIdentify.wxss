@@ -1,1 +1,7 @@
 /* pages/brandIdentify/brandIdentify.wxss */
+.brand-identify {
+
+}
+.brand-identify .identify-content {
+  padding: 20rpx 30rpx;
+}

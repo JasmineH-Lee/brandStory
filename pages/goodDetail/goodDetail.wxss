@@ -1,6 +1,6 @@
 /* pages/goodDetail/goodDetail.wxss */
 .good-detail {
-  background-color: #cacaca;
+  background-color: #f0f0f0;
 }
 .good-detail .swiper{
   height: 500rpx;

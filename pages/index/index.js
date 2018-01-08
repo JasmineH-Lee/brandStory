@@ -4,6 +4,11 @@ const app = getApp()
 
 Page({
   data: {
+    banner: [
+      { img_url: '../../imgs/test/jasmine.png' },
+      { img_url: '../../imgs/test/jasmine.png' },
+      { img_url: '../../imgs/test/jasmine.png' }
+    ],
     brandList: [
       { src: '../../imgs/test/jasmine.png' },
       { src: '../../imgs/test/jasmine.png' },

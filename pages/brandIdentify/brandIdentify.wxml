@@ -1,2 +1,6 @@
 <!--pages/brandIdentify/brandIdentify.wxml-->
-<text>pages/brandIdentify/brandIdentify.wxml</text>
+<view class="brand-identify">
+  <view class='identify-content'>
+    <text class="text">内容......</text>
+  </view>
+</view>

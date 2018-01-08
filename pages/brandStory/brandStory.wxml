@@ -1,10 +1,10 @@
 <!--pages/brandStory/brandStory.wxml-->
-<view class="brandStory">
-<view class="brand-image">
-  <image src='../../imgs/test/jasmine.png'></image>
-</view>
-<view class='brand-story'>
-  <span>标题</span>
-  <text>内容</text>
-</view>
+<view class="brand-story">
+  <view class="brand-image">
+    <image class="img" src='../../imgs/test/jasmine.png'></image>
+  </view>
+  <view class='brand-content'>
+    <span class="title">标题</span>
+    <text class="text">内容</text>
+  </view>
 </view>

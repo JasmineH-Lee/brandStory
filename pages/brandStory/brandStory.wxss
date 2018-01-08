@@ -1,1 +1,25 @@
 /* pages/brandStory/brandStory.wxss */
+.brand-story {
+
+}
+.brand-story .brand-image {
+  width: 100%;
+  height: 500rpx;
+}
+.brand-story .brand-image .img {
+  width: 100%;
+  height: 500rpx;
+}
+.brand-story .brand-content {
+  padding: 10rpx;
+  margin: 30rpx 0;
+}
+.brand-story .brand-content .title {
+  display: block;
+  text-align: center;
+  font-size: 40rpx;
+  font-weight: 800;
+}
+.brand-story .brand-content .text {
+
+}

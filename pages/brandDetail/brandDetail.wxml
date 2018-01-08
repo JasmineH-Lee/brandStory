@@ -19,11 +19,15 @@
         <span class="info-text">{{brandDetail.area}}</span>
       </view>
       <view class="info-list">
+        <span class="info-label">隶属集团：</span>
+        <span class="info-text">{{brandDetail.factory}}</span>
+      </view>
+      <view class="info-list">
         <span class="info-label">经营范围：</span>
         <span class="info-text">{{brandDetail.biz_scope}}</span>
       </view>
       <view class="info-list">
-        <span class="info-label">公司口号：</span>
+        <span class="info-label">公司文化：</span>
         <span class="info-text">{{brandDetail.culture}}</span>
       </view>
       <view class="info-list">
@@ -35,6 +39,13 @@
         <span class="info-text">{{brandDetail.official_site}}</span>
       </view>
     </view>
+    <view class="brand-detail-content" bindtap='openBrandStory'>
+      <view>
+        <span class="title">诞生历史</span>
+        <span class="tip">点击展开</span>
+      </view>
+      <view class="text">内容。。。</view>
+    </view>
     <view class="brand-detail-info" bindtap='openBrandStory'>
       <span class="title">品牌故事</span>
       <span class="tip">点击跳转</span>
@@ -42,6 +53,13 @@
     <view class="brand-detail-info" bindtap='openBrandIdentify'>
       <span class="title">品牌辨识</span>
       <span class="tip">点击跳转</span>
+    </view>
+    <view class="brand-detail-content" bindtap='openBrandStory'>
+      <view>
+        <span class="title">消费建议</span>
+        <span class="tip">点击展开</span>
+      </view>
+      <view class="text">内容。。。</view>
     </view>
     <view class="goods">
       <span>经典款</span>

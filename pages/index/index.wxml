@@ -1,6 +1,16 @@
 <!--home.wxml-->
 <import src="../templates/brandList/brandList.wxml" />
 <view class="home">
+  <swiper indicator-dots="true" autoplay="true" class="swiper">
+    <block wx:for="{{banner}}">
+      <swiper-item class="banner-item" bindtap="onProductsItemTap">
+          <image mode="aspectFill" class="item-image" 
+              src="{{item.img_url}}">
+          </image>
+          <span>{{item}}</span>
+      </swiper-item>
+    </block>
+  </swiper>
   <view class="brand-list">
     <view>
       <text>品牌列表</text>
