@@ -1,0 +1,65 @@
+<!--pages/brandDetail/brandDetail.wxml-->
+<view class='brand-detail'>
+  <view class="brand-image">
+    <image class="brand-logo" src='../../imgs/test/jasmine.png'></image>
+  </view>
+  <view class="brand-text">
+    <view class="title">CHANEL</view>
+    <view class="brand-info">
+      <view class="info-list">
+        <span class="info-label">成立时间：</span>
+        <span class="info-text">{{brandDetail.year}}</span>
+      </view>
+      <view class="info-list">
+        <span class="info-label">创始人：</span>
+        <span class="info-text">{{brandDetail.creator}}</span>
+      </view>
+      <view class="info-list">
+        <span class="info-label">总部地点：</span>
+        <span class="info-text">{{brandDetail.area}}</span>
+      </view>
+      <view class="info-list">
+        <span class="info-label">经营范围：</span>
+        <span class="info-text">{{brandDetail.biz_scope}}</span>
+      </view>
+      <view class="info-list">
+        <span class="info-label">公司口号：</span>
+        <span class="info-text">{{brandDetail.culture}}</span>
+      </view>
+      <view class="info-list">
+        <span class="info-label">设计理念：</span>
+        <span class="info-text">{{brandDetail.design}}</span>
+      </view>
+      <view class="info-list">
+        <span class="info-label">官网地址：</span>
+        <span class="info-text">{{brandDetail.official_site}}</span>
+      </view>
+    </view>
+    <view class="brand-detail-info" bindtap='openBrandStory'>
+      <span class="title">品牌故事</span>
+      <span class="tip">点击跳转</span>
+    </view>
+    <view class="brand-detail-info" bindtap='openBrandIdentify'>
+      <span class="title">品牌辨识</span>
+      <span class="tip">点击跳转</span>
+    </view>
+    <view class="goods">
+      <span>经典款</span>
+      <view class="goods-list" wx:for="{{goodsClassicList}}">
+        <view class="good" bindtap='goodDetail'>
+          <image class="good-img" src='{{item.img}}'></image>
+          <span class="good-name">{{item.name}}</span>
+        </view>
+      </view>
+    </view>
+    <view class="goods">
+      <span>新品</span>
+       <view class="goods-list" wx:for="{{goodsHotList}}">
+        <view class='good' bindtap='goodDetail'>
+          <image class="good-img" src='{{item.img}}'></image>
+          <span class="good-name">{{item.name}}</span>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

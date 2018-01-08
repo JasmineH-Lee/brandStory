@@ -1,0 +1,12 @@
+<!--home.wxml-->
+<import src="../templates/brandList/brandList.wxml" />
+<view class="home">
+  <view class="brand-list">
+    <view>
+      <text>品牌列表</text>
+    </view>
+    <view class="brand-title" wx:for="{{brandList}}" bindtap='openBrandDetail'>
+      <image class="brand-img" src="{{item.src}}"></image>
+    </view>
+  </view>
+</view>

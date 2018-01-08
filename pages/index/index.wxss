@@ -1,0 +1,20 @@
+/**index.wxss**/
+.brand-list {
+  width: 90%;
+  margin: 0 auto;
+  flex-flow: row wrap; 
+  justify-content: space-around;
+}
+.brand-list .brand-title {
+  display: inline-block;
+  width: 130rpx;
+  height: 130rpx;
+  margin: 2rpx;
+}
+.brand-list .brand-title:hover {
+  transform: translate(2rpx, 2rpx);
+}
+.brand-list .brand-title .brand-img {
+  width: 130rpx;
+  height: 130rpx;
+}

@@ -1,0 +1,62 @@
+/* pages/goodDetail/goodDetail.wxss */
+.good-detail {
+  background-color: #cacaca;
+}
+.good-detail .swiper{
+  height: 500rpx;
+  width: 100%;
+}
+.good-detail .swiper-box{
+  overflow-x: hidden;
+}
+.good-detail .banner-item {
+  width: 100%;
+  height: 500rpx;
+}
+.good-detail .banner-item .item-image{
+  width: 100%;
+  height: 500rpx;
+}
+.good-detail .good-info {
+  height: 120rpx;
+  padding: 30rpx 0;
+  background-color: #fff;
+}
+.good-detail .good-info .good-brand{
+  display:block;
+  text-align:center;
+  font-size:32rpx;
+  font-weight:500;
+  margin: 5rpx 0;
+}
+.good-detail .good-info .good-name{
+  display: block;
+  text-align:center;
+  font-size:28rpx;
+  font-weight:400;
+  margin: 5rpx 0;
+}
+.good-detail .good-info .good-price{
+  display: block;
+  text-align:center;
+  font-size:21rpx;
+  font-weight:200;
+  margin: 5rpx 0;
+}
+.good-detail .good-describe {
+  margin: 30rpx 0;
+  padding: 20rpx 10rpx;
+  background-color: #fff;
+}
+.good-detail .good-describe .title::before{
+  content: '----'
+}
+.good-detail .good-describe .title{
+  text-align:center;
+  display:block;
+  font-size:30rpx;
+  color:#333;
+}
+.good-detail .good-describe .title::after{
+  content: '----'
+}
