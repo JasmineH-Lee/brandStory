@@ -39,12 +39,12 @@
         <span class="info-text">{{brandDetail.official_site}}</span>
       </view>
     </view>
-    <view class="brand-detail-content" bindtap='openBrandStory'>
-      <view>
+    <view class="brand-detail-content">
+      <view bindtap="openHistory">
         <span class="title">诞生历史</span>
         <span class="tip">点击展开</span>
       </view>
-      <view class="text">内容。。。</view>
+      <view class="text" hidden="{{pageData.isHistory}}">内容。。。</view>
     </view>
     <view class="brand-detail-info" bindtap='openBrandStory'>
       <span class="title">品牌故事</span>
@@ -54,15 +54,15 @@
       <span class="title">品牌辨识</span>
       <span class="tip">点击跳转</span>
     </view>
-    <view class="brand-detail-content" bindtap='openBrandStory'>
-      <view>
+    <view class="brand-detail-content">
+      <view bindtap='openOpinion'>
         <span class="title">消费建议</span>
         <span class="tip">点击展开</span>
       </view>
-      <view class="text">内容。。。</view>
+      <view class="text" hidden="{{pageData.isOpinion}}">内容。。。</view>
     </view>
     <view class="goods">
-      <span>经典款</span>
+      <span class="goods-title">经典款</span>
       <view class="goods-list" wx:for="{{goodsClassicList}}">
         <view class="good" bindtap='goodDetail'>
           <image class="good-img" src='{{item.img}}'></image>
@@ -71,7 +71,7 @@
       </view>
     </view>
     <view class="goods">
-      <span>新品</span>
+      <span class="goods-title">新品</span>
        <view class="goods-list" wx:for="{{goodsHotList}}">
         <view class='good' bindtap='goodDetail'>
           <image class="good-img" src='{{item.img}}'></image>

@@ -1,6 +1,5 @@
 // pages/brandDetail/brandDetail.js
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -14,6 +13,10 @@ Page({
       culture: '流行稍纵即逝，风格永存',
       design: '高雅、简约、精美',
       official_site: 'http://www.chanel.com/'
+    },
+    pageData: {
+      "isHistory": true,
+      "isOpinion": true
     },
     goodsClassicList: [
       { img: '../../imgs/test/jasmine.png', name: '123' },
@@ -29,23 +32,49 @@ Page({
     ],
   },
 
+  openHistory: function () {
+    console.log(this.data.pageData.isHistory);
+    if (this.data.pageData.isHistory === true) {
+      // this.data.pageData.isHistory = false;
+      this.setData({
+        'pageData.isHistory': false
+      })
+    } else {
+      this.setData({
+        'pageData.isHistory': true
+      })
+    }
+  },
+  openOpinion: function () {
+    console.log(this.data.pageData.isOpinion);
+    if (this.data.pageData.isOpinion === true) {
+      this.setData({
+        'pageData.isOpinion': false
+      })
+    } else {
+      this.setData({
+        'pageData.isOpinion': true
+      })
+    }
+  },
+
   openBrandStory: function () {
     console.log('story');
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../brandStory/brandStory',
     })
   },
 
   openBrandIdentify: function () {
     console.log('identify');
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../brandIdentify/brandIdentify',
     })
   },
 
   goodDetail: function () {
     console.log('good-detail');
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../goodDetail/goodDetail',
     })
   },

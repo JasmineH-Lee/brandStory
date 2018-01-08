@@ -1,0 +1,17 @@
+/* pages/user/user.wxss */
+.my-header{
+    background-color: #ffdab9;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 30rpx;
+    font-size: 28rpx;
+}
+.my-header image{
+    height: 100rpx;
+    width: 100rpx;
+    border-radius: 100rpx;
+}
+.my-header text{
+    margin-left: 20rpx;
+}
