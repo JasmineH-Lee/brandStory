@@ -1,3 +1,7 @@
+import { Utils } from '../../utils/utils.js';
+var utils = new Utils();
+var WxParse = require('../../wxParse/wxParse.js');
+
 // pages/brandDetail/brandDetail.js
 Page({
   /**
@@ -58,17 +62,17 @@ Page({
     }
   },
 
-  openBrandStory: function () {
-    console.log('story');
+  openBrandStory: function (options) {
+    var brandId = options.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '../brandStory/brandStory',
+      url: '../brandStory/brandStory?brand_id=' + brandId,
     })
   },
 
-  openBrandIdentify: function () {
-    console.log('identify');
+  openBrandIdentify: function (options) {
+    var brandId = options.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '../brandIdentify/brandIdentify',
+      url: '../brandIdentify/brandIdentify?brand_id=' + brandId,
     })
   },
 
@@ -82,7 +86,45 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var brandId = options.brand_id;
+
+    wx.showLoading({
+      title: '加载中',
+    })
+
+    // 获取商品详情
+    var params = {
+      url: 'brand/getBrandInfoByBrandId',
+      data: {
+        brand_id: brandId
+      }
+    };
+    utils.requestHttp(params, (res) => {
+      console.log(res.data);
+      var tmp = {
+        year: res.data.create_year,
+        creator: res.data.brand_founder,
+        area: res.data.brand_area,
+        culture: res.data.slogan,
+        design: res.data.design_idea,
+        biz_scope: res.data.major_operate,
+        factory: res.data.company,
+        official_site: res.data.official_website,
+        history: res.data.born_history,
+        brand_story: res.data.brand_story,
+        brand_id: res.data.brand_id,
+        brand_name: res.data.brand_name,
+        brand_image_big: res.data.brand_image_big
+      }
+
+      this.setData({
+        'brandDetail': tmp,
+      });
+      WxParse.wxParse('born_history', 'html', res.data.born_history, this, 5);
+      WxParse.wxParse('consume_suggest', 'html', res.data.consume_suggest, this, 5);
+
+      wx.hideLoading();
+    });
   },
 
   /**

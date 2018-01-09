@@ -1,6 +1,7 @@
 <!--pages/brandIdentify/brandIdentify.wxml-->
-<view class="brand-identify">
-  <view class='identify-content'>
-    <text class="text">内容......</text>
-  </view>
-</view>
+<import src="../../wxParse/wxParse.wxml"/> 
+ <view class="brand-identify">
+    <view class="wxParse">
+      <template is="wxParse" data="{{wxParseData:brand_identify.nodes}}"/>
+    </view>  
+</view> 

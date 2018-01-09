@@ -15,8 +15,10 @@
     <view>
       <text>品牌列表</text>
     </view>
-    <view class="brand-title" wx:for="{{brandList}}" bindtap='openBrandDetail'>
-      <image class="brand-img" src="{{item.src}}"></image>
+    <block wx:for="{{brandList}}" >
+    <view class="brand-title" data-id="{{item.brand_id}}"  bindtap='openBrandDetail'>
+      <image class="brand-img" src="{{item.brand_image_logo}}"></image>
     </view>
+    </block>
   </view>
 </view>

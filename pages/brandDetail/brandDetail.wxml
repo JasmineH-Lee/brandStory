@@ -1,10 +1,11 @@
 <!--pages/brandDetail/brandDetail.wxml-->
+<import src="../../wxParse/wxParse.wxml"/> 
 <view class='brand-detail'>
   <view class="brand-image">
-    <image class="brand-logo" src='../../imgs/test/jasmine.png'></image>
+    <image class="brand-logo" src="{{brandDetail.brand_image_big}}"></image>
   </view>
   <view class="brand-text">
-    <view class="title">CHANEL</view>
+    <view class="title">{{brandDetail.brand_name}}</view>
     <view class="brand-info">
       <view class="info-list">
         <span class="info-label">成立时间：</span>
@@ -44,13 +45,17 @@
         <span class="title">诞生历史</span>
         <span class="tip">点击展开</span>
       </view>
-      <view class="text" hidden="{{pageData.isHistory}}">内容。。。</view>
+      <view class="text" hidden="{{pageData.isHistory}}">
+         <view class="wxParse">
+          <template is="wxParse" data="{{wxParseData:born_history.nodes}}"/>
+         </view> 
+      </view>
     </view>
-    <view class="brand-detail-info" bindtap='openBrandStory'>
+    <view class="brand-detail-info" data-id="{{brandDetail.brand_id}}" bindtap='openBrandStory'>
       <span class="title">品牌故事</span>
       <span class="tip">点击跳转</span>
     </view>
-    <view class="brand-detail-info" bindtap='openBrandIdentify'>
+    <view class="brand-detail-info" data-id="{{brandDetail.brand_id}}" bindtap='openBrandIdentify'>
       <span class="title">品牌辨识</span>
       <span class="tip">点击跳转</span>
     </view>
@@ -59,7 +64,11 @@
         <span class="title">消费建议</span>
         <span class="tip">点击展开</span>
       </view>
-      <view class="text" hidden="{{pageData.isOpinion}}">内容。。。</view>
+      <view class="text" hidden="{{pageData.isOpinion}}">
+        <view class="wxParse">
+          <template is="wxParse" data="{{wxParseData:consume_suggest.nodes}}"/>
+         </view> 
+      </view>
     </view>
     <view class="goods">
       <span class="goods-title">经典款</span>

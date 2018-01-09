@@ -1,3 +1,7 @@
+import { Utils } from '../../utils/utils.js';
+var utils = new Utils();
+var WxParse = require('../../wxParse/wxParse.js');
+
 // pages/brandIdentify/brandIdentify.js
 Page({
 
@@ -12,7 +16,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var brandId = options.brand_id;
+
+    wx.showLoading({
+      title: '加载中',
+    })
+
+    var params = {
+      url: 'brand/getBrandInfoByBrandId',
+      data: {
+        brand_id: brandId
+      }
+    };
+    utils.requestHttp(params, (res) => {
+      WxParse.wxParse('brand_identify', 'html', res.data.brand_identify, this, 5);
+      wx.hideLoading();
+    });
   },
 
   /**

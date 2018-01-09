@@ -1,3 +1,6 @@
+import { Utils } from '../../utils/utils.js';
+var utils = new Utils();
+
 //index.js
 //获取应用实例
 const app = getApp()
@@ -9,38 +12,7 @@ Page({
       { img_url: '../../imgs/test/jasmine.png' },
       { img_url: '../../imgs/test/jasmine.png' }
     ],
-    brandList: [
-      { src: '../../imgs/test/jasmine.png' },
-      { src: '../../imgs/test/jasmine.png' },
-      { src: '../../imgs/test/jasmine.png' },
-      { src: '../../imgs/test/jasmine.png' },
-      { src: '../../imgs/test/jasmine.png' },
-      { src: '../../imgs/test/jasmine.png' },
-      { src: '../../imgs/test/jasmine.png' },
-      { src: '../../imgs/test/jasmine.png' },
-      { src: '../../imgs/test/jasmine.png' },
-      { src: '../../imgs/test/jasmine.png' },
-      { src: '../../imgs/test/jasmine.png' },
-      { src: '../../imgs/test/jasmine.png' },
-      { src: '../../imgs/test/jasmine.png' },
-      { src: '../../imgs/test/jasmine.png' },
-      { src: '../../imgs/test/jasmine.png' },
-      { src: '../../imgs/test/jasmine.png' },
-      { src: '../../imgs/test/jasmine.png' },
-      { src: '../../imgs/test/jasmine.png' },
-      { src: '../../imgs/test/jasmine.png' },
-      { src: '../../imgs/test/jasmine.png' },
-      { src: '../../imgs/test/jasmine.png' },
-      { src: '../../imgs/test/jasmine.png' },
-      { src: '../../imgs/test/jasmine.png' },
-      { src: '../../imgs/test/jasmine.png' },
-      { src: '../../imgs/test/jasmine.png' },
-      { src: '../../imgs/test/jasmine.png' },
-      { src: '../../imgs/test/jasmine.png' },
-      { src: '../../imgs/test/jasmine.png' },
-      { src: '../../imgs/test/jasmine.png' },
-      { src: '../../imgs/test/jasmine.png' }
-    ],
+    brandList: {},
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
@@ -48,12 +20,28 @@ Page({
   },
   //事件处理函数
   openBrandDetail: function(event) {
-    console.log('detail');
+    var brandId = event.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '../brandDetail/brandDetail',
+      url: '../brandDetail/brandDetail?brand_id=' + brandId,
     })
   },
   onLoad: function () {
+
+    wx.showLoading({
+      title: '加载中',
+    })
+
+    // 请求接口，获取品牌数据
+    var params = {
+      url: 'brand/getBrandList'
+    };
+    utils.requestHttp(params, (res) => {
+      this.setData({
+        'brandList': res.data,
+      });
+      wx.hideLoading();
+    });
+
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
