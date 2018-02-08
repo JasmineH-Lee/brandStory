@@ -8,10 +8,19 @@ const app = getApp()
 Page({
   data: {
     banner: [
-      { img_url: '../../imgs/test/jasmine.png' },
-      { img_url: '../../imgs/test/jasmine.png' },
-      { img_url: '../../imgs/test/jasmine.png' }
+      { img_url: '../../imgs/banner/banner1.png' , title: 'title', desc: 'desc'},
+      { img_url: '../../imgs/banner/banner2.png' , title: 'title', desc: 'desc'},
+      { img_url: '../../imgs/banner/banner3.jpg' , title: 'title', desc: 'desc'}
     ],
+    tab: {
+      list: [
+        { id: 0, title: '首页' },
+        { id: 1, title: '女装' },
+        { id: 2, title: '包袋' },
+        { id: 3, title: '男装' },
+        { id: 4, title: '配饰' },
+      ]
+    },
     brandList: {},
     motto: 'Hello World',
     userInfo: {},
@@ -25,6 +34,17 @@ Page({
       url: '../brandDetail/brandDetail?brand_id=' + brandId,
     })
   },
+
+  onBannerChange: function (event) {
+    console.log(event.detail);
+    console.log(event.detail.current);
+      if (event.detail && event.detail.current !== undefined) {
+          this.setData({
+              bannerCurrent: event.detail.current,
+          });
+      }
+  },
+
   onLoad: function () {
 
     wx.showLoading({

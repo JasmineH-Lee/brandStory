@@ -1,21 +1,32 @@
 <!--pages/goodDetail/goodDetail.wxml-->
 <view class="good-detail">
-  <swiper indicator-dots="true" autoplay="true" class="swiper">
-    <block wx:for="{{banner}}">
-      <swiper-item class="banner-item" bindtap="onProductsItemTap">
-          <image mode="aspectFill" class="item-image" 
-              src="{{item.img_url}}">
-          </image>
-          <span>{{item}}</span>
-      </swiper-item>
-    </block>
-  </swiper>
-  <view class="good-info">
-    <span class="good-brand">{{good.brand}}</span>
-    <span class="good-name">{{good.name}}</span>
-    <span class="good-price">官网：￥{{good.price}}</span>
+  <view>
+    <swiper indicator-dots="true" autoplay="true" class="swiper">
+      <block wx:for="{{banner}}">
+        <swiper-item class="banner-item" bindtap="onProductsItemTap">
+            <image mode="aspectFill" class="item-image" 
+                src="{{item.img_url}}">
+            </image>
+            <span>{{item}}</span>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="good-info">
+      <span class="good-brand">{{good.brand}}</span>
+      <span class="good-name">{{good.name}}</span>
+      <span class="good-price">官网：￥{{good.price}}</span>
+    </view>
   </view>
   <view class="good-describe">
-    <span class="title">关于商品</span>
+    <view class="good-describe-title">
+      <span class="title">关于商品</span>
+    </view>
+    <view>
+      <view class='contents'>
+        <view wx:for="{{banner}}">
+          <image src='{{item.img_url}}' mode='widthFix' catchtap="viewImage"></image>
+        </view>
+      </view>
+    </view>
   </view>
 </view>

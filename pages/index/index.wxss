@@ -1,4 +1,7 @@
 /**index.wxss**/
+.home {
+  background-color: #fff;
+}
 .brand-list {
   width: 90%;
   margin: 0 auto;
@@ -33,4 +36,83 @@
 .brand-list .brand-title .brand-img {
   width: 130rpx;
   height: 130rpx;
+}
+
+
+/**固定部分，搜索框**/
+.top-container {
+  position: fixed;
+  top: 0;
+  z-index: 200;
+}
+
+.top-container .search {
+  background-color: #fff;
+  height: 50rpx;
+}
+
+
+/**banner-imgs**/
+.banner-imgs {
+  width: 100%;
+  height: 910rpx;
+  margin-top: 120rpx;
+  margin-bottom: 20rpx;
+}
+.banner-imgs .my-swiper {
+  height: 100%;
+}
+.banner-imgs .image {
+  width: 100%;
+  height: 700rpx;
+}
+.banner-info {
+  line-height: 1;
+}
+.banner-info .banner-title {
+  font-size: 28px;
+  margin-top: 9px;
+  font-weight: 500;
+  line-height: 1;
+}
+.banner-info .banner-desc {
+  font-size: 18px;
+  line-height: 1;
+  margin-top: 7px;
+}
+
+/**导航**/
+.nav {
+  height: 42px;
+}
+.tab-container {
+  width: 750rpx;
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+}
+.tab-bar {
+  overflow: auto;
+  width: 100%;
+}
+.tab-list {
+  width: 100%;
+  background-color: #fff;
+  text-align: center;
+}
+.tab {
+  flex: 1;
+  display: inline-block;
+  text-align: center;
+  box-sizing: border-box;
+}
+.tab-title {
+  font-size: 13px;
+  display: inline-block;
+  color: #666;
+  height: 24px;
+  line-height: 24px;
+  box-sizing: border-box;
+  margin: 0 10px;
+  word-break: keep-all;
 }

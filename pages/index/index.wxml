@@ -1,24 +1,66 @@
 <!--home.wxml-->
-<import src="../templates/brandList/brandList.wxml" />
 <view class="home">
-  <swiper indicator-dots="true" autoplay="true" class="swiper">
-    <block wx:for="{{banner}}">
-      <swiper-item class="banner-item" bindtap="onProductsItemTap">
-          <image mode="aspectFill" class="item-image" 
-              src="{{item.img_url}}">
-          </image>
-          <span>{{item}}</span>
-      </swiper-item>
-    </block>
-  </swiper>
-  <view class="brand-list">
-    <view>
-      <text>品牌列表</text>
+
+  <!--上部，固定内容-->
+  <view class='top-container'>
+    <!--搜索框-->
+    <view class='search'>搜索框</view>
+    <!--导航-->
+    <view class='nav'>
+      <block>
+        <scroll-view class='tab-container'>
+          <view class='tab-bar'>
+            <view class='tab-list'>
+              <view class='tab' wx:for="{{tab.list}}">
+                <span class='tab-title'>{{item.title}}</span>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </block>
+      <!-- <block>
+        <view>
+          <view>
+            <view wx:for="{{tab.list}}">
+              <span>{{item.title}}</span>
+            </view>
+          </view>
+        </view>
+      </block> -->
     </view>
-    <block wx:for="{{brandList}}" >
-    <view class="brand-title" data-id="{{item.brand_id}}"  bindtap='openBrandDetail'>
-      <image class="brand-img" src="{{item.brand_image_logo}}"></image>
-    </view>
-    </block>
   </view>
+
+  <!--可滑动部分-->
+  <scroll-view>
+    <view>
+      <!--banner-->
+      <view class="banner-imgs">
+        <swiper class="my-swiper" indicator-dots='true' indicator-active-color='#f66' indicator-color='#ddd' autoplay='true' circular='true' bindchange="onBannerChange">
+          <block wx:for="{{banner}}">
+            <swiper-item>
+              <image mode="aspectFill" class="image" 
+                src="{{item.img_url}}">
+              </image>
+              <view class='banner-info'>
+                <view class='banner-title'>{{ item.title }}</view>
+                <view class='banner-desc'>{{ item.desc }}</view>
+              </view>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+      <!--当下潮流趋势，简介-->
+      <view class="brand-list">
+        <view>
+          <text>品牌列表</text>
+        </view>
+        <block wx:for="{{brandList}}" >
+        <view class="brand-title" data-id="{{item.brand_id}}"  bindtap='openBrandDetail'>
+          <image class="brand-img" src="{{item.brand_image_logo}}"></image>
+        </view>
+        </block>
+      </view>
+    </view>
+  </scroll-view>
+  
 </view>
