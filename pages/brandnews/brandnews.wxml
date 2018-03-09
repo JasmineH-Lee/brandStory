@@ -1,3 +1,4 @@
+<!--pages/brandnews/brandnews.wxml-->
 <!--home.wxml-->
 <view class="home">
 
@@ -15,7 +16,8 @@
   </view>
 
   <!--可滑动部分-->
-  <scroll-view>
+  <scroll-view class='content'>
+
     <!--引导部分：满屏-->
     <view class='abstract' style='background-image: url(/imgs/test/big.jpg)'>
       <view class='abstract-title'>

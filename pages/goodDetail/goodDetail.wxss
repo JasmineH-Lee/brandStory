@@ -44,7 +44,7 @@
   margin: 5rpx 0;
 }
 .good-detail .good-describe {
-  margin: 20rpx 0;
+  margin: 20rpx 0 0 0;
   padding: 20rpx 10rpx;
   background-color: #fff;
 }
@@ -59,4 +59,10 @@
 }
 .good-detail .good-describe .title::after{
   content: '----'
+}
+
+.contents .img {
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }

@@ -23,8 +23,8 @@
     </view>
     <view>
       <view class='contents'>
-        <view wx:for="{{banner}}">
-          <image src='{{item.img_url}}' mode='widthFix' catchtap="viewImage"></image>
+        <view wx:for="{{contents}}">
+          <image class='img' src='{{item.img_url}}' mode='widthFix' catchtap="viewImage"></image>
         </view>
       </view>
     </view>

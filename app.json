@@ -6,7 +6,10 @@
     "pages/brandDetail/brandDetail",
     "pages/goodDetail/goodDetail",
     "pages/brandIdentify/brandIdentify",
-    "pages/user/user"
+    "pages/user/user",
+    "pages/brandList/index",
+    "pages/brandnews/brandnews",
+    "pages/lifenews/lifenews"
   ],
   "window": {
     "backgroundColor": "#fff",
@@ -17,6 +20,11 @@
   },
   "tabBar": {
     "list": [
+      {
+        "pagePath": "pages/lifenews/lifenews",
+        "text": "你的文艺范",
+        "iconPath": "imgs/bar/user.png"
+      },
       {
         "pagePath": "pages/index/index",
         "text": "首页",

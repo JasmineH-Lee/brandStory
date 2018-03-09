@@ -1,0 +1,16 @@
+<view class='brandlist'>
+  <view class='top-container'>
+    <view class='search-box'>
+      <span><image src='/imgs/search/search.png' class='search-icon'></image></span>
+      <input class='search-input' placeholder='要找什么' 
+      value='{{searchData}}'></input>
+      <span><image src='/imgs/search/delete.png' class='delete-icon' bindtap='resetSearch'></image></span>
+      <view class='cancelSearch-btn' bindtap='cancelSearch'>取消</view>
+    </view>
+  </view>
+  <view>
+    <view wx:for='{{brandList}}'>
+      <view bindtap='openBrandDetail'>{{item.brand_name}}</view>
+    </view>
+  </view>
+</view>
